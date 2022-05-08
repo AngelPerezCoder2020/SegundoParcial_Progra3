@@ -27,11 +27,11 @@ public class Poliza {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_Poliza")
 	private long id;
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+	@ManyToOne(fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
 	@JoinColumn(name = "id_Paciente")
 	@JsonBackReference
 	private Paciente paciente;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy="poliza",cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+	@OneToMany(fetch = FetchType.LAZY, mappedBy="poliza",cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
 	private List<Cita> citas;	
 	@Column(name = "estado")
 	private Boolean estado;

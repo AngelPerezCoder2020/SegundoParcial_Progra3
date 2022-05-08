@@ -30,7 +30,7 @@ public class Paciente {
 	private String SecondLastName;
 	@Column(name = "age")
 	private int age;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy="paciente",cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+	@OneToMany(fetch = FetchType.LAZY, mappedBy="paciente",cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
 	private List<Poliza> polizas;
 	
 	public List<Poliza> getPolizas() {

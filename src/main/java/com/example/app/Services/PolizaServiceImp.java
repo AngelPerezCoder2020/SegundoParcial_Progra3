@@ -40,6 +40,7 @@ public class PolizaServiceImp implements PolizaService{
 	public void EliminarPoliza(Long id1,int x,Long id2) {
 		if(x==1&&dao.existsById(id1)) {
 			dao.deleteById(id1);
+			daoCitas.LimpiarCitas(id1);
 		}else if(x==2) {
 			dao.LimpiarPolizas(id2);
 			daoCitas.LimpiarCitas(id1);
