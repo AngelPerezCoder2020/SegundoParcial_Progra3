@@ -31,8 +31,10 @@ public class PolizaServiceImp implements PolizaService{
 	@Override
 	public void ModificarPoliza(Long id, Poliza poliza) {
 		if(dao.existsById(id)) {
+			Long id_p = dao.recuperar_id(id);
 			poliza.setId(id);
 			dao.save(poliza);
+			dao.mantenerPaciente(id_p, id);
 		}
 	}
 
@@ -46,10 +48,4 @@ public class PolizaServiceImp implements PolizaService{
 			daoCitas.LimpiarCitas(id1);
 		}
 	}
-
-	@Override
-	public void crearPoliza(Poliza poliza) {
-		dao.save(poliza);
-	}
-
 }

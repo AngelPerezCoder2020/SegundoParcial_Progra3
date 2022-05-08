@@ -21,4 +21,14 @@ public interface CitasDAO extends CrudRepository<Cita, Long>{
 	@Query(value="DELETE FROM citas WHERE id_poliza = ?1",
 			nativeQuery=true)
 	public void LimpiarCitas(Long id);
+	
+	@Modifying
+	@Transactional
+	@Query(value="UPDATE citas SET id_poliza = ?1 WHERE id_cita = ?2",
+			nativeQuery = true)
+	public void guardarPoliza(Long id_p, Long id);	
+	
+	@Query(value="SELECT id_cita FROM citas ORDER BY id_cita DESC LIMIT 1",
+			nativeQuery=true)
+	public Long ultimo_id();
 }

@@ -9,5 +9,4 @@ public interface PolizaService {
 	public Poliza BuscarPoliza(Long ig);
 	public void ModificarPoliza(Long id, Poliza poliza);
 	public void EliminarPoliza(Long id1,int x,Long id2);
-	public void crearPoliza(Poliza poliza);
 }

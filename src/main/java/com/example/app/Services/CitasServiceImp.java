@@ -27,7 +27,7 @@ public class CitasServiceImp implements CitasService{
 	@Override
 	public void AgendarCita(Cita cita) {
 		dao.save(cita);
-		
+		dao.guardarPoliza(cita.getPoliza_id(),dao.ultimo_id());
 	}
 
 	@Override

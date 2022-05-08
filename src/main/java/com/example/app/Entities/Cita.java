@@ -37,6 +37,15 @@ public class Cita {
 	private String estado;
 	@Column(name ="observaciones")
 	private String observaciones;
+	
+	private Long poliza_id;
+	
+	public Long getPoliza_id() {
+		return poliza_id;
+	}
+	public void setPoliza_id(Long poliza_id) {
+		this.poliza_id = poliza_id;
+	}
 	public long getId() {
 		return id;
 	}
